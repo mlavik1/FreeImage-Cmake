@@ -280,7 +280,7 @@ FreeImage_Initialise(BOOL load_local_plugins_only) {
 #endif
 			s_plugins->AddNode(InitPFM);
 			s_plugins->AddNode(InitPICT);
-			s_plugins->AddNode(InitRAW);
+			//s_plugins->AddNode(InitRAW);
 #ifdef SUPPORT_WEBP
 			s_plugins->AddNode(InitWEBP);
 #endif
