@@ -461,7 +461,6 @@ file(GLOB LIB_FREEIMAGE_SRC
     Source/FreeImage/PluginRAS.cpp
     Source/FreeImage/FreeImage.cpp
     Source/FreeImage/PluginGIF.cpp
-    Source/FreeImage/PluginRAW.cpp
     Source/FreeImage/FreeImageC.c
     Source/FreeImage/PluginHDR.cpp
     Source/FreeImage/PluginSGI.cpp
@@ -474,8 +473,6 @@ file(GLOB LIB_FREEIMAGE_SRC
 
 
 set (ALL_SRC 
-    ${LIB_RAWLITE_SRC}
-    
     ${LIB_OTHER_SRC}
     ${LIB_FREEIMAGE_SRC}
 )
@@ -542,11 +539,6 @@ include_directories(Source/OpenEXR/IlmImf)
 include_directories(Source/OpenEXR/IlmThread)
 include_directories(Source/OpenEXR/Imath)
 include_directories(Source/OpenEXR/IexMath)
-include_directories(Source/LibRawLite)
-include_directories(Source/LibRawLite/dcraw)
-include_directories(Source/LibRawLite/internal)
-include_directories(Source/LibRawLite/libraw)
-include_directories(Source/LibRawLite/src)
 include_directories(Source/LibWebP)
 include_directories(Source/LibJXR)
 include_directories(Source/LibJXR/image/sys)
@@ -557,7 +549,7 @@ include_directories(Wrapper/FreeImagePlus)
 
 
 configure_file (
-  source/config.h.in
+  Source/config.h.in
   ${PROJECT_SOURCE_DIR}/Source/config.h
 )
 
