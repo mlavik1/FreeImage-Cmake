@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-
 project(FreeImage)
 
 option(FREEIMAGE_LIB    "Use Static Libaray" ON)
@@ -9,7 +8,6 @@ option(SUPPORT_FMT_JPEG "use lib jpeg" OFF)
 option(SUPPORT_FMT_OPENEXR "use lib openexr" OFF)
 option(SUPPORT_FMT_TIFF "use lib tiff" OFF)
 option(SUPPORT_FMT_JXR "use lib jxr" OFF)
-
 
 set (LIB_TIFF4_SRC    
     Source/LibTIFF4/tif_aux.c
@@ -562,6 +560,7 @@ ENDIF()
 if (${FREEIMAGE_LIB})
     add_library(FreeImage STATIC ${ALL_SRC})
 else()
+    set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
     add_library(FreeImage SHARED ${ALL_SRC})
 endif()
 
